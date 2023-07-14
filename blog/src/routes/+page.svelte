@@ -2,12 +2,8 @@
     import Test from '$lib/Test.svelte';
     import '$db/start'
     export let data;
+
+    $: ({ latest_episode } = data);
 </script>
 
-<h1>{data.latest_episode.title}</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
-
-
-<a href="/about">About Us</a>
-
-<Test />
+<h3>Latest Episode: {latest_episode.title}</h3>
