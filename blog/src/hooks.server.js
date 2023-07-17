@@ -22,14 +22,14 @@ function authorize({ event, resolve }) {
 
 export const handle = sequence(logger, authorize);
 
-export function handleFetch({request, fetch}) {
+/* export function handleFetch({request, fetch}) {
     // intercepting fetch and tweak request and fetch it at
     return fetch(request);
 }
 
 export function handleError({error, event}) {
     return {
-        message: 'Oops, I#m intercepting in a hook',
+        message: 'Oops, I am intercepting in a hook',
         code: error.code
     }
-}
+} */
