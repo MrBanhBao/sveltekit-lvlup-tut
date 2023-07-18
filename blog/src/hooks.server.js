@@ -15,7 +15,7 @@ async function logger({ event, resolve }) {
 function authorize({ event, resolve }) {
     const user = auth();
     console.log('hi');
-    event.locals.user = user;
+    //event.locals.user = user;
     return resolve(event)
 }
 
