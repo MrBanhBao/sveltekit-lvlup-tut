@@ -1,3 +1,3 @@
 <footer>
-    <p>Footer: Level Up Tutorials</p>
+    <a href="/contact">Contact</a>
 </footer>
