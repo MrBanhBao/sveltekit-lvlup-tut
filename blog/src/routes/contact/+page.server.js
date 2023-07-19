@@ -1,8 +1,15 @@
+ import { fail } from "@sveltejs/kit";
+
 export const actions = {
     default: async ({locals, request}) => {
-        console.log(request);
+        // Check 
+        if(!locals?.user?.roles?.includes('admin')) {
+            return fail(401, {
+                error_message: "Unauthorized!"
+            })
+        }
+
         const data = await request.formData();
-        console.log('data', data);
         
         const name = data.get('name');
         const email = data.get('email');
