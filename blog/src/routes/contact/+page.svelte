@@ -13,10 +13,24 @@
     </p>
 {/if}
 
-{#if form?.massage} 
+{#if form?.message} 
     <p>{form.message}</p>
 {:else}
-    <form use:enhance method="POST">
+    <form use:enhance={({form, data, action}) => {
+        // form is form element
+        // data is formData Object
+        // action is url form posts to
+        // cancel is cancel form from submitting
+
+        return ({result, update}) => {
+            // result -> actionResult
+            // update () -> runs all of the default use:enhance
+            update();
+        }
+
+    }}
+    action="?/email" 
+    method="POST">
         <label>
             Name: <input type="text" required name="name" id="name"/> 
         </label>

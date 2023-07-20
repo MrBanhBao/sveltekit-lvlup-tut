@@ -1,7 +1,7 @@
  import { fail } from "@sveltejs/kit";
 
 export const actions = {
-    default: async ({locals, request}) => {
+    email: async ({locals, request}) => {
         // Check 
         if(!locals?.user?.roles?.includes('admin')) {
             return fail(401, {
@@ -19,5 +19,9 @@ export const actions = {
         return {
             message: 'Email Sent!'
         }
+    },
+
+    test: () => {
+        console.log('hit test action')
     }
 } 
