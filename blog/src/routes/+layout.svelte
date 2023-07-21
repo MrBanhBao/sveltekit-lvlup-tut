@@ -1,4 +1,7 @@
 <script>
+    import { PUBLIC_API_LUT_KEY } from '$env/static/public';
+    console.log('PUBLIC', PUBLIC_API_LUT_KEY);
+    import {browser, building, dev, version} from '$app/environment';
     import {navigating} from '$app/stores';
     import Header from './Header.svelte';
     import Footer from './Footer.svelte';
@@ -7,6 +10,12 @@
 
     export let data;
     $: ({ all_episodes } = data)
+
+    console.log(browser, building, dev, version);
+    // brwoser -> bool, if app is running in browser
+    // building -> bool, true if build for production
+    // dev -> bool, if in development
+    // version -> config.kit.version.name
 </script>
 
 <Header />
