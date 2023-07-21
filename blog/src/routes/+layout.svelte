@@ -1,4 +1,13 @@
 <script>
+    import { goto } from '$app/navigation';
+    // lifecycle, afterNavigation, beforeNavigate
+    // disableScrollHandling -> disable default scroll handling
+    // goto -> change route via code 
+    // invalidate -> load function on active page re-run
+    // invalidateAll -> all load function to rerun
+    // prealoadCode -> load js code for giving route
+    // preloadData -> load data fromload function for given routes
+    
     import { PUBLIC_API_LUT_KEY } from '$env/static/public';
     console.log('PUBLIC', PUBLIC_API_LUT_KEY);
     import {browser, building, dev, version} from '$app/environment';
@@ -27,6 +36,7 @@
 <main>
     <div class="main">
         <slot /> 
+        <button on:click={() => goto('/contact')}>Change</button>
     </div>
     <aside>
         <Episodes episodes={all_episodes}></Episodes>
